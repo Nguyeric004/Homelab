@@ -2,15 +2,24 @@
     - Attached all VMs to a host-only adapter and NAT adapter
     - Configured Ubuntu VM to be victim server
         - Install DVWA
-            sudo systemctl start apache2
-            sudo systemctl status apache2
-            http://192.168.56.101/dvwa/
-            Username: admin
-            Password: password
+            - Startup
+                sudo systemctl start apache2
+                sudo systemctl status apache2
+            - Web interface
+                http://192.168.56.101/dvwa/
+                Username: admin
+                Password: password
+            - Config location
+                /var/www/html/dvwa/config/conifig.inc.php.dist
+                'nano' for editing file
         - Configure DVWA DB with MySQL credentials
-            sudo systemctl start mysql
-            sudo systemctl status mysql
+            - Startup
+                sudo systemctl start mysql
+                sudo systemctl status mysql
+            - acess mysql commands
+                sudo mysql -u root -p
         - Install Wazuh Manager
-            sudo systemctl start wazuh-agent
-            sudo systemctl status wazuh-agent     
+            - Startup            
+                sudo systemctl start wazuh-agent
+                sudo systemctl status wazuh-agent 
 

@@ -20,6 +20,7 @@
                 sudo mysql -u root -p
         - Install Wazuh Manager
             - Startup            
-                sudo systemctl start wazuh-agent
-                sudo systemctl status wazuh-agent 
+                sudo systemctl start wazuh-manager
+                sudo systemctl status wazuh-manager
+                
 

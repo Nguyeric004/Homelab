@@ -1,6 +1,6 @@
 9/10/25
     - Attached all VMs to a host-only adapter and NAT adapter
-    - Configured Ubuntu VM to be victim server
+    - Configured Ubuntu VM to be victim server and wazuh manager
         - Install DVWA
             - Startup
                 sudo systemctl start apache2
@@ -22,5 +22,20 @@
             - Startup            
                 sudo systemctl start wazuh-manager
                 sudo systemctl status wazuh-manager
+                Manager IP: 192.168.56.101
+
+9/11/25
+    - Configured Wazuh agent profile on Ubuntu VM
+        - sudo /var/ossec/bin/manage_agents
+            - agent name: W10VM
+            - agent ip: any
+            - agent key: MDAxIFcxMFZNIGFueSAwNmu0OTgzMzRhNzM2ZjA3NGNlMWFlMWY0YTJkY2FhMmY1Mjc0ODc1NWUxYWYxNjFkODNkYmYwM2RmYTNj
+        - sudo /var/ossec/bin/agent_control -l
+            Check agent status
+    - Configured Windows 10 VM to be victim server
+        - Installed Wazuh agent
+        - Application is called Manage Agent
+        - Connected Wazuh Agent on Windows VM to Wazuh Manager on Ubuntu VM
+
                 
 

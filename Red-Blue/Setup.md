@@ -37,5 +37,14 @@
         - Application is called Manage Agent
         - Connected Wazuh Agent on Windows VM to Wazuh Manager on Ubuntu VM
 
-                
+9/14/25
+    - Configured Kali VM to be attack box
+        - Setup static IP for Kali VM
+            - sudo nmcli connection modify "Wired connection 1" ipv4.method manual ipv4.addresses 192.168.56.110/24 ipv4.gateway 192.168.56.1
+            - sudo nmcli connection up "Wired connection 1"
+        - Updated Kali VM
+            -s udo apt update && sudo apt full-upgrade -y
+        - Installed tools
+            - sudo apt install nmap nikto sqlmap hydra gobuster wfuzz proxychains4 dirbuster -y     
+           
 
